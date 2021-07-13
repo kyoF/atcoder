@@ -1,3 +1,5 @@
+# 括弧付きの式が与えられたときの計算プログラム
+
 # 割り算を掛け算に、引き算を足し算に変更
 def chg_subtosum_divtomul(formula):
     tmp_list = []
