@@ -134,3 +134,14 @@ for index, item in enumerate(formula.split('*')):
  
 answer = sum(map(float, formula.split('+')))
 print(answer)
+
+
+
+formula = '(((1+1+1+2+3+1234+234+9)/3)+8*23-2342+234)/1+1*(3)+(3+1+3*2/10)='
+
+for _ in range(int(formula.count('('))):
+
+    tmp_formula = formula[formula[0:formula.find(')')].rfind('('):formula.find(')')+1]
+    formula = formula.replace(tmp_formula, str(eval(tmp_formula.replace('(', '').replace(')', ''))))
+
+print(eval(formula.replace('=', '')))
