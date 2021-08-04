@@ -19,29 +19,23 @@
 #         print('No')
 #         exit()
 # print('Yes')
+# 別解
+# s = set()
+# for _ in range(4):
+#     s.add(input())
+# print('Yes' if len(s)==4 else 'No')
 
 # c
-S = input()
-tar = "abc"
-mod = 10**9+7
-dp = [[0 for _ in range(len(tar)+1)] for _ in range(len(S)+1)]
-for i in range(len(S)+1):
-    dp[i][0] = 1
-for i in range(len(S)):
-    for j in range(len(tar)):
-        if S[i] != tar[j]:
-            dp[i+1][j+1] = dp[i][j+1]
-        if S[i] == tar[j]:
-            dp[i+1][j+1] = (dp[i][j+1] + dp[i][j]) % mod
-print(dp)
-# [
-#     '' a b c
-#     [1,0,0,0], ''
-#     [1,1,0,0], a
-#     [1,2,0,0], a
-#     [1,2,2,0], b
-#     [1,2,4,0], b
-#     [1,2,4,4], c
-#     [1,2,4,8], c
-# ]
-print(dp[len(S)][len(tar)])
+# S = input()
+# tar = "chokudai"
+# mod = 10**9+7
+# dp = [[0 for _ in range(len(tar)+1)] for _ in range(len(S)+1)]
+# for i in range(len(S)+1):
+#     dp[i][0] = 1
+# for i in range(len(S)):
+#     for j in range(len(tar)):
+#         if S[i] != tar[j]:
+#             dp[i+1][j+1] = dp[i][j+1]
+#         if S[i] == tar[j]:
+#             dp[i+1][j+1] = (dp[i][j+1] + dp[i][j]) % mod
+# print(dp[len(S)][len(tar)])
